@@ -268,3 +268,7 @@ MVPでは、検証する範囲を「自分の記録のみ」に絞ります。�
    - 誤って認識された場合に、確認・修正できる画面にする必要がある
    - 音声データが外部に送られる場合、健康に関わる情報の扱いに注意が必要
    - 外部サービスを使う場合の費用
+
+## 画面遷移図
+Figma：
+https://www.figma.com/design/iUQUSSQ1HtmcNgesPK8nfO/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3--Community-?node-id=0-1&t=fO6fR8ELvooyaOH2-1
