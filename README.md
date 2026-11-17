@@ -272,3 +272,6 @@ MVPでは、検証する範囲を「自分の記録のみ」に絞ります。�
 ## 画面遷移図
 Figma：
 https://www.figma.com/design/iUQUSSQ1HtmcNgesPK8nfO/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3--Community-?node-id=0-1&t=fO6fR8ELvooyaOH2-1
+
+## ER図
+- [ER図（dbdiagram.io）](https://dbdiagram.io/d/my-app-ER図-6afa24e34e0bad6598c0a6c0)
