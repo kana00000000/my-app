@@ -11,6 +11,6 @@ development:
 test:
   <<: *default
 
+# 初回デプロイではDBを1つだけ使うため、cache専用のDBは指定しない
 production:
-  database: cache
   <<: *default
