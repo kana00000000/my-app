@@ -21,23 +21,7 @@ test:
   <<: *default
   database: app_test
 
-# 本番環境では、パスワードやURL（Uniform Resource Locator：ネット上の住所）などを
-# 環境変数で渡す。ソースコードに書かないこと。
+# 本番（Render）では、環境変数 DATABASE_URL に入っているURLで接続先が決まる。
+# パスワードなどをソースコードに書かないこと。
 production:
-  primary: &primary_production
-    <<: *default
-    database: app_production
-    username: app
-    password: <%= ENV["APP_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: app_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: app_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: app_production_cable
-    migrations_paths: db/cable_migrate
+  <<: *default
