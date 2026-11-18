@@ -44,8 +44,8 @@ Rails.application.configure do
   config.cache_store = :memory_store
   config.active_job.queue_adapter = :async
 
-  # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "example.com" }
+  # メール内のリンクに使う、公開先のURL（Deviseのパスワード再設定などで使う）
+  config.action_mailer.default_url_options = { host: "my-app-lk8r.onrender.com", protocol: "https" }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
