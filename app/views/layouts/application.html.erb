@@ -28,6 +28,7 @@
       <%= link_to "おなかカレンダー", root_path %>
 
       <% if user_signed_in? %>
+        <%= link_to "退会", withdrawal_path %>
         <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% end %>
     </header>
