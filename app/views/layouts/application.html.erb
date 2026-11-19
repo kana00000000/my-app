@@ -24,6 +24,21 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to "おなかカレンダー", root_path %>
+
+      <% if user_signed_in? %>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% end %>
+    </header>
+
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
