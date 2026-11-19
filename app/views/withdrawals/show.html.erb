@@ -1,0 +1,10 @@
+<main>
+  <h1>退会の確認</h1>
+
+  <p>退会すると、これまでの記録がすべて削除されます。</p>
+  <p>削除したデータは、元に戻せません。</p>
+
+  <%= button_to "退会する", registration_path(:user), method: :delete %>
+
+  <p><%= link_to "やめる", calendar_path %></p>
+</main>
