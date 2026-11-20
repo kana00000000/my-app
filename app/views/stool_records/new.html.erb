@@ -9,6 +9,15 @@
     </div>
   <% end %>
 
+  <% if @existing_record %>
+    <section>
+      <p>この日の記録: <%= @existing_record.condition_label %></p>
+      <%= button_to "この記録を消去する", stool_record_path(@existing_record),
+                    method: :delete,
+                    form: { data: { turbo_confirm: "この記録を消去しますか？消去すると元に戻せません。" } } %>
+    </section>
+  <% end %>
+
   <%= form_with model: @stool_record do |f| %>
     <p>日付: <%= @stool_record.recorded_on&.strftime("%Y年%-m月%-d日") %></p>
     <%= f.hidden_field :recorded_on %>
