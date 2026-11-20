@@ -1,5 +1,8 @@
 <main>
   <h1>カレンダー</h1>
   <p><%= current_user.name %>さん、ログイン中です</p>
-  <p>（カレンダーは、このあと作ります）</p>
+
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+  <% end %>
 </main>
