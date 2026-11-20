@@ -67,3 +67,5 @@ gem "simplecov", "~> 1.3", group: :test
 gem "simple_calendar", "~> 3.1"
 
 gem "bullet", "~> 8.3", group: :development
+
+gem "capybara", "~> 3.40", group: :test
