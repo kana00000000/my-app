@@ -65,3 +65,5 @@ gem "factory_bot_rails", "~> 6.5", groups: [ :development, :test ]
 gem "simplecov", "~> 1.3", group: :test
 
 gem "simple_calendar", "~> 3.1"
+
+gem "bullet", "~> 8.3", group: :development
