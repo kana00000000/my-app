@@ -1,0 +1,28 @@
+<main>
+  <h1>排便の記録</h1>
+
+  <% if @stool_record.errors.any? %>
+    <div class="alert">
+      <% @stool_record.errors.each do |error| %>
+        <p><%= error.message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form_with model: @stool_record do |f| %>
+    <p>日付: <%= @stool_record.recorded_on&.strftime("%Y年%-m月%-d日") %></p>
+    <%= f.hidden_field :recorded_on %>
+
+    <p>便の状態</p>
+    <% StoolRecord.conditions.each_key do |key| %>
+      <label>
+        <%= f.radio_button :condition, key %>
+        <%= StoolRecord::CONDITION_LABELS[key] %>
+      </label>
+    <% end %>
+
+    <p><%= f.submit "登録する" %></p>
+  <% end %>
+
+  <p><%= link_to "カレンダーに戻る", calendar_path %></p>
+</main>
