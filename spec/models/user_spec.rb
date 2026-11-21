@@ -37,4 +37,22 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "#stool_record_on" do
+    let(:user) { FactoryBot.create(:user) }
+
+    it "その日の記録があれば、その記録を返す" do
+      record = FactoryBot.create(:stool_record, user: user, recorded_on: Date.new(2026, 11, 15))
+
+      expect(user.stool_record_on(Date.new(2026, 11, 15))).to eq record
+    end
+
+    it "その日の記録がなければ、nilを返す" do
+      expect(user.stool_record_on(Date.new(2026, 11, 15))).to be_nil
+    end
+
+    it "日付が空なら、nilを返す" do
+      expect(user.stool_record_on(nil)).to be_nil
+    end
+  end
 end
