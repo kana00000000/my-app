@@ -23,12 +23,14 @@
     <%= f.hidden_field :recorded_on %>
 
     <p>便の状態</p>
-    <% StoolRecord.conditions.each_key do |key| %>
-      <label>
-        <%= f.radio_button :condition, key %>
-        <%= StoolRecord::CONDITION_LABELS[key] %>
-      </label>
-    <% end %>
+    <div class="condition-options">
+      <% StoolRecord.conditions.each_key do |key| %>
+        <label>
+          <%= f.radio_button :condition, key %>
+          <%= StoolRecord::CONDITION_LABELS[key] %>
+        </label>
+      <% end %>
+    </div>
 
     <p><%= f.submit "登録する" %></p>
   <% end %>

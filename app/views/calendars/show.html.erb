@@ -3,9 +3,9 @@
   <p><%= current_user.name %>さん、ログイン中です</p>
 
   <%= month_calendar(events: @stool_records, attribute: :recorded_on) do |date, records| %>
-    <div><%= link_to date.day, new_stool_record_path(recorded_on: date) %></div>
+    <div class="day-number"><%= link_to date.day, new_stool_record_path(recorded_on: date) %></div>
     <% records.each do |record| %>
-      <div><%= record.condition_label %></div>
+      <div class="record condition-<%= record.condition %>"><%= record.condition_label %></div>
     <% end %>
   <% end %>
 </main>
