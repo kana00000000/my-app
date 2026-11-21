@@ -7,4 +7,11 @@ class User < ApplicationRecord
   has_many :stool_records, dependent: :destroy
 
   validates :name, presence: true
+
+  # 指定した日の記録を返す（なければ nil）
+  def stool_record_on(date)
+    return if date.blank?
+
+    stool_records.find_by(recorded_on: date)
+  end
 end

@@ -17,6 +17,11 @@ class StoolRecord < ApplicationRecord
   validates :condition, presence: { message: "便の状態を選んでください" }
   validates :recorded_on, uniqueness: { scope: :user_id, message: "この日の記録はすでにあります" }
 
+  # カレンダーに表示する期間（その月と、前後の週のはみ出し分）の記録
+  scope :in_calendar_month, ->(date) {
+    where(recorded_on: date.beginning_of_month.beginning_of_week..date.end_of_month.end_of_week)
+  }
+
   def condition_label
     CONDITION_LABELS[condition]
   end
