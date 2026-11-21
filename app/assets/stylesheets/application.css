@@ -1,10 +1,302 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+:root {
+  --main-color: #2f7d6d;
+  --bg-color: #faf9f6;
+  --text-color: #333;
+  --border-color: #ddd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+a {
+  color: var(--main-color);
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.page {
+  flex: 1;
+}
+
+main {
+  padding: 24px 0;
+}
+
+/* ヘッダー */
+.site-header {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.site-title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.site-nav a {
+  color: #fff;
+}
+
+.site-nav form {
+  margin: 0;
+}
+
+/* フッター */
+.site-footer {
+  padding: 16px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  border-top: 1px solid var(--border-color);
+}
+
+/* メッセージ */
+.notice,
+.alert {
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+
+.notice {
+  background: #e3f4ea;
+  color: #1f5f3a;
+}
+
+.alert {
+  background: #fde8e8;
+  color: #9b2c2c;
+}
+
+.alert p {
+  margin: 0;
+}
+
+/* フォーム・ボタン */
+.field {
+  margin-bottom: 16px;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  max-width: 360px;
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button,
+input[type="submit"],
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--main-color);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-secondary {
+  background: #fff;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.link-button {
+  padding: 4px 12px;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.hero {
+  text-align: center;
+  padding-top: 48px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 便の状態の選択肢 */
+.condition-options label {
+  display: inline-block;
+  margin: 0 12px 8px 0;
+}
+
+/* カレンダー */
+.simple-calendar {
+  margin: 16px 0;
+}
+
+.simple-calendar .calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.simple-calendar .calendar-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.simple-calendar table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.simple-calendar th {
+  padding: 6px 0;
+  background: #eef5f3;
+  font-size: 0.85rem;
+}
+
+.simple-calendar td {
+  height: 84px;
+  padding: 4px;
+  vertical-align: top;
+  background: #fff;
+  border: 1px solid var(--border-color);
+}
+
+.simple-calendar td.prev-month,
+.simple-calendar td.next-month {
+  background: #f3f3f3;
+  color: #aaa;
+}
+
+.simple-calendar td.today {
+  outline: 2px solid var(--main-color);
+  outline-offset: -2px;
+}
+
+.day-number a {
+  display: inline-block;
+  min-width: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 便の状態ごとの色（文字も表示するので、色だけに頼らない） */
+.record {
+  margin-top: 4px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.condition-normal {
+  background: #d8f0d2;
+  color: #25602a;
+}
+
+.condition-hard {
+  background: #ecd9c0;
+  color: #6a4520;
+}
+
+.condition-soft {
+  background: #fff1a8;
+  color: #6b5a00;
+}
+
+.condition-diarrhea {
+  background: #ffd0d0;
+  color: #9b1c1c;
+}
+
+/* スマートフォン（画面の幅が狭いとき） */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  .site-title {
+    font-size: 1.1rem;
+  }
+
+  .site-nav {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .simple-calendar td {
+    height: 64px;
+    padding: 2px;
+  }
+
+  .record {
+    padding: 1px 2px;
+    font-size: 0.7rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    max-width: 100%;
+  }
+}
