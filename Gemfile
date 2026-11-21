@@ -69,3 +69,7 @@ gem "simple_calendar", "~> 3.1"
 gem "bullet", "~> 8.3", group: :development
 
 gem "capybara", "~> 3.40", group: :test
+
+gem "rails-i18n", "~> 8.1"
+
+gem "devise-i18n", "~> 1.16"
