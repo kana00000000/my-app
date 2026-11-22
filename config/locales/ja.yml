@@ -1,0 +1,19 @@
+ja:
+  devise:
+    sessions:
+      signed_out: "ログアウトしました"
+  activerecord:
+    models:
+      user: ユーザー
+      stool_record: 排便記録
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        current_password: 現在のパスワード
+        remember_me: ログインしたままにする
+      stool_record:
+        recorded_on: 日付
+        condition: 便の状態

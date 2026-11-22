@@ -216,7 +216,7 @@ input[type="submit"],
 
 .simple-calendar td {
   height: 84px;
-  padding: 4px;
+  padding: 0;
   vertical-align: top;
   background: #fff;
   border: 1px solid var(--border-color);
@@ -233,11 +233,27 @@ input[type="submit"],
   outline-offset: -2px;
 }
 
-.day-number a {
-  display: inline-block;
-  min-width: 24px;
-  font-weight: bold;
+/* 日付の枠全体を押せるようにする */
+.day-link {
+  display: block;
+  min-height: 84px;
+  padding: 4px;
+  color: inherit;
   text-decoration: none;
+}
+
+.day-link:hover {
+  background: #eef5f3;
+}
+
+.day-number {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.simple-calendar td.prev-month .day-number,
+.simple-calendar td.next-month .day-number {
+  color: #aaa;
 }
 
 /* 便の状態ごとの色（文字も表示するので、色だけに頼らない） */
@@ -286,6 +302,10 @@ input[type="submit"],
 
   .simple-calendar td {
     height: 64px;
+  }
+
+  .day-link {
+    min-height: 64px;
     padding: 2px;
   }
 
