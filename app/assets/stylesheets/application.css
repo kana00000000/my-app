@@ -3,6 +3,8 @@
   --bg-color: #faf9f6;
   --text-color: #333;
   --border-color: #ddd;
+  --sunday-color: #d33;
+  --saturday-color: #2b6cb0;
 }
 
 * {
@@ -251,6 +253,18 @@ input[type="submit"],
   color: var(--main-color);
 }
 
+/* 日曜は赤、土曜は青（日曜始まりなので、1列目が日曜、7列目が土曜） */
+.simple-calendar th:nth-child(1),
+.simple-calendar td:nth-child(1) .day-number {
+  color: var(--sunday-color);
+}
+
+.simple-calendar th:nth-child(7),
+.simple-calendar td:nth-child(7) .day-number {
+  color: var(--saturday-color);
+}
+
+/* 前の月・次の月の日付は、薄い色にする */
 .simple-calendar td.prev-month .day-number,
 .simple-calendar td.next-month .day-number {
   color: #aaa;

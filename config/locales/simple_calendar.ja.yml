@@ -1,5 +1,5 @@
 ja:
   simple_calendar:
-    previous: "前の月"
-    today: "今日"
-    next: "次の月"
+    previous: "先月"
+    today: "今月"
+    next: "来月"

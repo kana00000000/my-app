@@ -26,6 +26,7 @@ module App
     # 日本語と日本時間を使う
     config.time_zone = "Tokyo"
     config.i18n.default_locale = :ja
+    config.beginning_of_week = :sunday
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
