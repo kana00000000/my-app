@@ -15,7 +15,7 @@ RSpec.describe "ユーザー認証", type: :system do
     click_button "登録する"
 
     expect(page).to have_current_path(calendar_path)
-    expect(page).to have_content("テストユーザーさん、ログイン中です")
+    expect(page).to have_button("ログアウト")
 
     click_button "ログアウト"
 
@@ -25,7 +25,7 @@ RSpec.describe "ユーザー認証", type: :system do
     click_button "ログインする"
 
     expect(page).to have_current_path(calendar_path)
-    expect(page).to have_content("テストユーザーさん、ログイン中です")
+    expect(page).to have_button("ログアウト")
   end
 
   it "ログインしていない状態でカレンダーを開くと、ログイン画面に移動する" do

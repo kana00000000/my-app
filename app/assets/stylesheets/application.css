@@ -3,6 +3,8 @@
   --bg-color: #faf9f6;
   --text-color: #333;
   --border-color: #ddd;
+  --sunday-color: #d33;
+  --saturday-color: #2b6cb0;
 }
 
 * {
@@ -216,7 +218,7 @@ input[type="submit"],
 
 .simple-calendar td {
   height: 84px;
-  padding: 4px;
+  padding: 0;
   vertical-align: top;
   background: #fff;
   border: 1px solid var(--border-color);
@@ -233,11 +235,39 @@ input[type="submit"],
   outline-offset: -2px;
 }
 
-.day-number a {
-  display: inline-block;
-  min-width: 24px;
-  font-weight: bold;
+/* 日付の枠全体を押せるようにする */
+.day-link {
+  display: block;
+  min-height: 84px;
+  padding: 4px;
+  color: inherit;
   text-decoration: none;
+}
+
+.day-link:hover {
+  background: #eef5f3;
+}
+
+.day-number {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+/* 日曜は赤、土曜は青（日曜始まりなので、1列目が日曜、7列目が土曜） */
+.simple-calendar th:nth-child(1),
+.simple-calendar td:nth-child(1) .day-number {
+  color: var(--sunday-color);
+}
+
+.simple-calendar th:nth-child(7),
+.simple-calendar td:nth-child(7) .day-number {
+  color: var(--saturday-color);
+}
+
+/* 前の月・次の月の日付は、薄い色にする */
+.simple-calendar td.prev-month .day-number,
+.simple-calendar td.next-month .day-number {
+  color: #aaa;
 }
 
 /* 便の状態ごとの色（文字も表示するので、色だけに頼らない） */
@@ -286,6 +316,10 @@ input[type="submit"],
 
   .simple-calendar td {
     height: 64px;
+  }
+
+  .day-link {
+    min-height: 64px;
     padding: 2px;
   }
 
